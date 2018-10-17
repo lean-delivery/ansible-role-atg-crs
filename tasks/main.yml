@@ -1,0 +1,13 @@
+---
+- name: "Check {{ crs_config_txt }}"
+  stat:
+    path: "{{ crs_config_txt }}"
+  register: crs_conf_props
+
+- name: "Read config file"
+  include_tasks: "read-crs-conf-props.yml"
+  when: crs_conf_props.stat.exists == True
+
+- name: "Install ATG Commerce Reference Store"
+  include_tasks: "install-crs.yml"
+  when: crs_conf_props.stat.exists == False or not crs_version == crs_installed_version

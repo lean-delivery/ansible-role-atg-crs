@@ -1,0 +1,25 @@
+---
+- name: "Read content of {{ crs_config_txt }}"
+  slurp:
+    src: "{{ crs_config_txt }}"
+  register: remote_config
+
+- name: "Set config_properties"
+  set_fact:
+    crs_config_properties: "{{ remote_config['content'] | b64decode }}"
+
+- name: "Set product name"
+  set_fact:
+    crs_name: "ATG Store"
+  when: crs_version.split('.')[0] | int <= 10
+
+- name: "Set product name"
+  set_fact:
+    crs_name: "CRS Store"
+  when: crs_version.split('.')[0] | int >= 11
+
+- name: "Check installed CRS version"
+  set_fact:
+    crs_installed_version: "{{ item.split('=').2 }}"
+  with_items: "{{ crs_config_properties.splitlines() }}"
+  when: item.split('=').0 == "install" and item.split('=').1 == "{{ crs_name }}"
