@@ -10,7 +10,7 @@ USER_INSTALL_DIR={{ dynamo_root }}
 #-------
 -fileOverwrite_{{ dynamo_root }}/CommerceReferenceStore/.CommerceReferenceStore_config/config/setup_rule.xml=Yes
 -fileOverwrite_{{ dynamo_root }}/CommerceReferenceStore/.CommerceReferenceStore_config/lib/vendorlibs.jar=Yes
--fileOverwrite_{{ dynamo_root }}/CommerceReferenceStore/.CommerceReferenceStore_config/lib/{% if crs_version.split('.')[0] | int >= 11 %}OCIAPlatformlib{% else %}ATGIAPlatformlib{% endif %}.jar=Yes
+-fileOverwrite_{{ dynamo_root }}/CommerceReferenceStore/.CommerceReferenceStore_config/lib/{{ crs_version.split('.')[0] | int >= 11 | ternary('OCIAPlatformlib','ATGIAPlatformlib') }}.jar=Yes
 -fileOverwrite_{{ dynamo_root }}/CommerceReferenceStore/.CommerceReferenceStore_config/bin/getlicense.sh=Yes
 -fileOverwrite_{{ dynamo_root }}/CommerceReferenceStore/.CommerceReferenceStore_config/bin/getlicense.bat=Yes
 -fileOverwrite_{{ dynamo_root }}/CommerceReferenceStore/uninstall/.CommerceReferenceStore_uninstall/Uninstall Oracle {% if crs_version.split('.')[0] | int <= 10 %}ATG Web {% endif %}Commerce Reference Store {{ crs_version }}.lax=Yes

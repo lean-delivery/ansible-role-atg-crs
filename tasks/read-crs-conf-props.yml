@@ -10,13 +10,7 @@
 
 - name: "Set product name"
   set_fact:
-    crs_name: "ATG Store"
-  when: crs_version.split('.')[0] | int <= 10
-
-- name: "Set product name"
-  set_fact:
-    crs_name: "CRS Store"
-  when: crs_version.split('.')[0] | int >= 11
+    crs_name: "{{ crs_version.split('.')[0] | int >= 11 | ternary('CRS Store','ATG Store') }}"
 
 - name: "Check installed CRS version"
   set_fact:
