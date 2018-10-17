@@ -39,7 +39,7 @@ Docker atg-crs 11.3:
     - docker
 
 # Tests for Docker driver for CRS 11.2
-Docker atg-crs 11.1:
+Docker atg-crs 11.2:
   stage: deployment test
   script:
     - molecule test -s docker-11.2
