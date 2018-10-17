@@ -89,7 +89,7 @@ Example Playbook
     dynamo_root: "/opt/atg/ATG{{ atg_version }}"
 ```
 
-### Installing ATG Commerce Reference Store 10.2 from local:
+### Installing ATG Commerce Reference Store 11.3 from web:
 ```yaml
 - name: "Install CRS 11.3 from web"
   hosts: all
