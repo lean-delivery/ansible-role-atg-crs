@@ -22,4 +22,4 @@
   set_fact:
     crs_installed_version: "{{ item.split('=').2 }}"
   with_items: "{{ crs_config_properties.splitlines() }}"
-  when: item.split('=').0 == "install" and item.split('=').1 == "{{ crs_name }}"
+  when: item.split('=').0 == "install" and crs_name == item.split('=').1

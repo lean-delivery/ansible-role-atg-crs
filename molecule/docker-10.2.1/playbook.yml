@@ -14,7 +14,7 @@
       transport: "web"
       transport_web: "{{ lookup('env','STORAGE_EPC') }}/oracle-commerce-suite/commerce/ATG10.2/ATG10.2/ATG10.2.zip"
     - role: ansible-role-atg-crs
-      crs_version: "10.2"
+      crs_version: "10.2.1"
       transport: "web"
       transport_web: "{{ lookup('env','STORAGE_EPC') }}/oracle-commerce-suite/commerce/ATG10.2/CRS10.2.1/V43450-01.zip"
 
