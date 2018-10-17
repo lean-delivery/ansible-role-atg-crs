@@ -14,7 +14,7 @@ variables:
 EPC atg-crs 11.3:
   variables:
     EPC_REGION: EPAM-BY2
-  stage: Deployment test
+  stage: deployment test
   script:
     - molecule test -s cloud-epc-11.3
   tags:
@@ -24,7 +24,7 @@ EPC atg-crs 11.3:
 AWS atg-crs 11.3:
   variables:
     EPC_REGION: AWS-EUCENTRAL
-  stage: Deployment test
+  stage: deployment test
   script:
     - molecule test -s cloud-aws-11.3
   tags:
@@ -32,7 +32,7 @@ AWS atg-crs 11.3:
 
 # Tests for Docker driver for CRS 11.3
 Docker atg-crs 11.3:
-  stage: Deployment test
+  stage: deployment test
   script:
     - molecule test -s docker-11.3
   tags:
@@ -40,7 +40,7 @@ Docker atg-crs 11.3:
 
 # Tests for Docker driver for CRS 11.2
 Docker atg-crs 11.1:
-  stage: Deployment test
+  stage: deployment test
   script:
     - molecule test -s docker-11.2
   tags:
@@ -48,7 +48,7 @@ Docker atg-crs 11.1:
 
 # Tests for Docker driver for CRS 11.1
 Docker atg-crs 11.1:
-  stage: Deployment test
+  stage: deployment test
   script:
     - molecule test -s docker-11.1
   tags:
@@ -56,7 +56,7 @@ Docker atg-crs 11.1:
 
 # Tests for Docker driver for CRS 10.2.1
 Docker atg-crs 10.2.1:
-  stage: Deployment test
+  stage: deployment test
   script:
     - molecule test -s docker-10.2.1
   tags:

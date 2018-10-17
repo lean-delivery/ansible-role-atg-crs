@@ -84,7 +84,6 @@ Example Playbook
       transport: "local"
       transport_local: "/tmp/V861211-01.zip"
 
-
   vars:
     atg_version: "11.3"
     dynamo_root: "/opt/atg/ATG{{ atg_version }}"
@@ -111,7 +110,6 @@ Example Playbook
       crs_version: "11.3"
       transport: "web"
       transport_web: "http://my-storage.example.com/V861211-01.zip"
-
 
   vars:
     atg_version: "11.3"
