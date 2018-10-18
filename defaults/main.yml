@@ -1,0 +1,17 @@
+---
+crs_version: "11.3"
+
+# path to installed Oracle ATG platform
+dynamo_root: "/opt/atg/ATG"
+
+# artifact source transport
+transport: "local"
+# available are:
+# - "web" Fetching artifact from custom web uri
+# - "local" Local artifact
+
+transport_web: "http://my-storage.example.com/V861211-01.zip"
+transport_local: "/tmp/V861211-01.zip"
+
+# path to download CRS
+download_path: "/tmp"
